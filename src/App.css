@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  color: #212846;
+}
+
+.wrapper > *:not(:last-child){
+  margin-bottom: 60px;
+}
