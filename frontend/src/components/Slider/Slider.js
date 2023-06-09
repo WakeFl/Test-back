@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PostTemplate from '../Ideas/PostTemplate';
 import Alert from '../Alert'
-import { Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { Container } from '@mui/system';
 import { Virtual } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -53,19 +53,19 @@ const Slider = ({ items }) => {
 
                     </Grid>
 
-                    <div>{items.length
+                    <Box>{items.length
                         ? <h4 style={{ marginTop: "15px" }}>{activeSlideIndex + 1} / {items.length}</h4>
                         : <p style={{ height: "132px", fontSize: "30px", marginTop: "40px" }}>There are no tasks on your list</p>
                     }
-                    </div>
+                    </Box>
                 </Swiper>
             </Container >
-            <div className="slider-controler">
-                <div className="swiper-button-prev slider-arrow">
-                </div>
-                <div className="swiper-button-next slider-arrow">
-                </div>
-            </div>
+            <Box className="slider-controler">
+                <Box className="swiper-button-prev slider-arrow">
+                </Box>
+                <Box className="swiper-button-next slider-arrow">
+                </Box>
+            </Box>
             {open && <Alert open={open} setOpen={setOpen} text={'You have completed this task!'} />}
         </>
     );

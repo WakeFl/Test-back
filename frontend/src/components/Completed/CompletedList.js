@@ -15,8 +15,8 @@ const CompletedList = () => {
         <>
             <h1 className="section-title">Completed chellenges</h1>
             {completed.length
-                ? <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650, color: "#212846" }} aria-label="simple table">
+                ? <TableContainer sx={{mb: '30px' }} component={Paper}>
+                    <Table sx={{ minWidth: 650, color: "#212846"}} aria-label="simple table">
                         <TableHead>
                             <TableRow>
                                 <TableCell >№</TableCell>
