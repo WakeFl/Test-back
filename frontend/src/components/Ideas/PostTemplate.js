@@ -3,7 +3,7 @@ import styles from './PostTemplate.module.css'
 const PostTemplate = ({ activity, type, item, handleClick }) => {
     return (
         <Grid item md={3}>
-            <Card className={styles.card} sx={{ backgroundColor: "#8f95ec", cursor: "pointer" }} onClick={() => handleClick(item)}>
+            <Card className={styles.card} sx={{ backgroundColor: "#8f95ec", cursor: "pointer", transition: "all 0.5s ease" }} onClick={() => handleClick(item)}>
                 <CardContent>
                     <Typography
                         variant='h5'
