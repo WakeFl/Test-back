@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux/es/exports'
 import { addTodo } from '../../store/todoSlice'
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import PostTemplate from "./PostTemplate"
 import Alert from '../Alert'
 
@@ -60,7 +60,7 @@ const FreshIdeas = () => {
 
 
     return (
-        <div>
+        <Box>
             <h1 className="section-title">Choose fresh ideas to do</h1>
             <Grid container spacing={2}>
                 {isLoading
@@ -71,7 +71,7 @@ const FreshIdeas = () => {
                 }
             </Grid >
             {open && <Alert open={open} setOpen={setOpen} text={'Added to to-do list'} />}
-        </div >
+        </Box>
     );
 }
 export default FreshIdeas

@@ -1,12 +1,16 @@
+import { useState } from "react"
 import { Button } from "@mui/material"
 import { Container } from "@mui/system"
 import { useSelector } from "react-redux/es/exports"
 import { useDispatch } from "react-redux/es/exports"
 import { replaceCompleted } from "../store/completeSlice"
 import { replaceTodo } from "../store/todoSlice"
-
+import Alert from "./Alert"
 
 const Requests = () => {
+
+    const [get, setGet] = useState(false)
+    const [post, setPost] = useState(false)
 
     const ideas = useSelector(state => state.todos.todos)
     const completed = useSelector(state => state.completed.completed)
@@ -17,9 +21,9 @@ const Requests = () => {
         fetch('http://localhost:8000/todos', { method: 'GET' })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 dispatch(replaceCompleted(data[0].completed))
                 dispatch(replaceTodo(data[0].ideas))
+                setGet(true)
             })
     }
 
@@ -37,7 +41,7 @@ const Requests = () => {
             },
             body: JSON.stringify(data)
         }).then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setPost(true))
     }
 
     return (
@@ -45,9 +49,11 @@ const Requests = () => {
             <Button onClick={() => getData()}>
                 Get todo
             </Button>
-            <Button onClick={() => postData()}>
+            <Button onClick={() => postData()} disabled={(ideas.length || completed.length) ? false : true}>
                 Post todo
             </Button>
+            {get && <Alert open={get} setOpen={setGet} text={"You've got a to-do list!"} />}
+            {post && <Alert open={post} setOpen={setPost} text={'You have sent a to-do list!'} />}
         </Container>
     )
 }
