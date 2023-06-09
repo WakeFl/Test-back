@@ -1,14 +1,14 @@
 import { Grid, Card, CardContent, Typography } from '@mui/material'
+import styles from './PostTemplate.module.css'
 const PostTemplate = ({ activity, type, item, handleClick }) => {
     return (
         <Grid item md={3}>
-            <Card sx={{ backgroundColor: "#8f95ec", cursor: "pointer" }} onClick={() => handleClick(item)}>
+            <Card className={styles.card} sx={{ backgroundColor: "#8f95ec", cursor: "pointer" }} onClick={() => handleClick(item)}>
                 <CardContent>
                     <Typography
                         variant='h5'
                         component='h3'
                         sx={{ height: '130px' }}>
-
                         {activity}
                     </Typography>
                 </CardContent>
