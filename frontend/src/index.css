@@ -47,14 +47,10 @@ code {
   background: #f9f9f9;
 }
 
-
 .slider-controler {
   position: relative;
-  bottom:120px;
+  bottom:160px;
 }
-
-
-
 
 .section-title {
   margin-bottom: 30px;

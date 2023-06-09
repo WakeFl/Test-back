@@ -37,7 +37,7 @@ const Slider = ({ items }) => {
     return (
         <>
             <Container maxWidth="md" >
-                <Swiper modules={[Virtual, Navigation]} spaceBetween={50} slidesPerView={3} virtual
+                <Swiper style={{ padding: "30px" }} modules={[Virtual, Navigation]} spaceBetween={50} slidesPerView={3} virtual
                     onSlideChange={handleSlideChange}
                     navigation={{
                         nextEl: '.swiper-button-next',
