@@ -25,6 +25,7 @@ const Requests = () => {
                 dispatch(replaceTodo(data[0].ideas))
                 setGet(true)
             })
+            .catch(err => console.log(err))
     }
 
     const postData = () => {
@@ -42,6 +43,7 @@ const Requests = () => {
             body: JSON.stringify(data)
         }).then(res => res.json())
             .then(data => setPost(true))
+            .catch(err => console.log(err))
     }
 
     return (
